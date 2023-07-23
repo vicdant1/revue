@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import Header from './components/Header.vue'
 import Navbar from './components/Navbar.vue';
@@ -13,7 +13,7 @@ import User from './components/User.vue'
   <main>
     <User/>
     <hr>
-    <Test prop-a="if i can take you in the paradise up above"/>
+    <Test prop-a="if i can take you in the paradise up above" @testemit="e => console.log(`evento passado: ${e}`)"/>
   </main>
 </template>
 
