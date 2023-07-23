@@ -6,10 +6,15 @@
       <label for="dataNascimento">data Nascimento:</label><br/>
       <input type="number" id="dataNascimento" name="dataNascimento" v-model="person.dataNascimento">
     </form>
+    <hr>
+    <form>
+      <label for="teste">teste:</label><br/>
+      <input type="number" id="teste" name="teste" v-model="teste">
+    </form>
   </div>
 
   
-  {{ person.nome }} - {{ person.dataNascimento }} - {{ person.idade }}
+  {{ person.nome }} - {{ person.dataNascimento }} - {{ person.idade }} : teste: {{ teste }}
 
   <div v-if="computedValue">idade par</div>
   <div v-else>idade impar</div>
@@ -18,7 +23,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, reactive } from 'vue';
+import { computed, onMounted, reactive, ref, watch, watchEffect } from 'vue';
 
 // import { ref } from 'vue';
 
@@ -30,6 +35,8 @@ const person = reactive({
   dataNascimento: 0,
   idade: 0
 })
+
+const teste = ref(0)
 
 
 const calcAge = () => {
@@ -44,6 +51,14 @@ onMounted(() => {
 // new way to work with computed
 const computedValue = computed(() => {
   return person.dataNascimento % 2 == 0
+})
+
+watch(person, (novo, antigo) => {
+  console.log(novo, antigo)
+})
+
+watchEffect(() => {
+  console.log(teste.value)
 })
 
 </script>
