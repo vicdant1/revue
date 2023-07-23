@@ -2,15 +2,17 @@
   <nav>
     <span>Tutorial Vue</span>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Login</a></li>
+      <li v-for="element, i in elements" :key="i"><a href="#">{{ element }}</a></li>
     </ul>
   </nav>
 </template>
 
 <script setup>
-
+const elements = [
+  "Home",
+  "Sobre",
+  "Login"
+]
 </script>
 
 <style lang="scss" scoped>

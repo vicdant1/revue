@@ -6,12 +6,13 @@ import User from './components/User.vue'
 </script>
 
 <template>
-  <Navbar/>
+  <Navbar v-once/>
     <Header></Header>
 
   <main>
     <User/>
-
+    resume
+    https://www.youtube.com/watch?v=FUcf5frR5J4&list=PLxd1RHU8YgYlF3Wk8-SW7UEowbqhBXtkp&index=11&ab_channel=PabloCodes
   </main>
 </template>
 
