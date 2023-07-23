@@ -11,11 +11,14 @@
   
   {{ person.nome }} - {{ person.dataNascimento }} - {{ person.idade }}
 
+  <div v-if="computedValue">idade par</div>
+  <div v-else>idade impar</div>
+
   <button @click="calcAge">click</button>
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue';
+import { computed, onMounted, reactive } from 'vue';
 
 // import { ref } from 'vue';
 
@@ -36,6 +39,11 @@ const calcAge = () => {
 onMounted(() => {
   // when component is mounted
   // can be asynchronous
+})
+
+// new way to work with computed
+const computedValue = computed(() => {
+  return person.dataNascimento % 2 == 0
 })
 
 </script>
