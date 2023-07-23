@@ -7,10 +7,14 @@
       counter++
       $emit('testemit', counter)}
       ">Emit event</button>
+
+      <button @click="() => addCargo('')">add cargo</button>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useCargos } from '../stores/cargos';
+
 const counter = 0;
 const {propA} = defineProps({
   propA:{
@@ -18,6 +22,8 @@ const {propA} = defineProps({
     type: String
   }
 })
+
+const {addCargo} = useCargos()
 
 defineEmits(['testemit'])
 </script>

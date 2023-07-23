@@ -6,10 +6,16 @@ import Test from './components/Test.vue';
 import User from './components/User.vue'
 import Aviso from './components/Aviso.vue'
 import { provide, ref } from 'vue';
+import { useCargos } from './stores/cargos';
+import { storeToRefs } from 'pinia'
 
 const aviso = ref("aviso")
 
 provide("aviso", aviso)
+
+
+const store = useCargos()
+const {totalCargos} = storeToRefs(store);
 
 </script>
 
@@ -25,6 +31,9 @@ provide("aviso", aviso)
 
     <Aviso/>
     <input type="text" name="aviso" id="aviso" v-model="aviso">
+
+    <hr>
+    {{ totalCargos }}
   </main>
 </template>
 
