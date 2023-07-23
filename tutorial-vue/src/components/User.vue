@@ -8,11 +8,14 @@
     </form>
   </div>
 
-  {{ person.nome }} - {{ person.dataNascimento }}
+  
+  {{ person.nome }} - {{ person.dataNascimento }} - {{ person.idade }}
+
+  <button @click="calcAge">click</button>
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { onMounted, reactive } from 'vue';
 
 // import { ref } from 'vue';
 
@@ -24,6 +27,17 @@ const person = reactive({
   dataNascimento: 0,
   idade: 0
 })
+
+
+const calcAge = () => {
+  person.idade = 2023 - person.dataNascimento
+}
+
+onMounted(() => {
+  // when component is mounted
+  // can be asynchronous
+})
+
 </script>
 
 <style lang="scss" scoped>
