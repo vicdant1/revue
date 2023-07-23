@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 
 import Header from './components/Header.vue'
 import Navbar from './components/Navbar.vue';
+import Test from './components/Test.vue';
 import User from './components/User.vue'
 </script>
 
@@ -11,8 +12,8 @@ import User from './components/User.vue'
 
   <main>
     <User/>
-    resume
-    https://www.youtube.com/watch?v=FUcf5frR5J4&list=PLxd1RHU8YgYlF3Wk8-SW7UEowbqhBXtkp&index=11&ab_channel=PabloCodes
+    <hr>
+    <Test prop-a="if i can take you in the paradise up above"/>
   </main>
 </template>
 
