@@ -24,6 +24,7 @@ const {totalCargos} = storeToRefs(store);
     <Header></Header>
 
   <main>
+    <router-view></router-view>
     <User/>
     <hr>
     <Test prop-a="if i can take you in the paradise up above" @testemit="e => console.log(`evento passado: ${e}`)"/>
